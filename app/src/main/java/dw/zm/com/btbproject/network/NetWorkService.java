@@ -1,4 +1,4 @@
-package dw.zm.com.btbproject;
+package dw.zm.com.btbproject.network;
 
 import android.util.Log;
 
@@ -13,10 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import dw.zm.com.btbproject.entry.Funds;
 import dw.zm.com.btbproject.entry.SellInfo;
 import dw.zm.com.btbproject.entry.User;
-import dw.zm.com.btbproject.network.APIUrl;
 import dw.zm.com.btbproject.utils.Codec;
 import dw.zm.com.btbproject.utils.TimerUtil;
 import okhttp3.Call;
@@ -26,6 +24,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import rx.Observable;
 
 import static dw.zm.com.btbproject.network.APIUrl.SECRET_KEY;
 
@@ -90,24 +89,6 @@ public class NetWorkService {
         });
     }
 
-    public void getUserInfo(Map<String, String> paramsMap) {
-        final Request request = new Request.Builder().post(RequestBody.create(mediaType, parserParamsMap(paramsMap))).url(APIUrl.UESR_INFO_FORMET).build();
-        mOkHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String result = response.body().string();
-                Log.i("result", result);
-                User user = new Gson().fromJson(result, User.class);
-                Log.i("result", user.info.funds.asset.net + "    " + user.info.funds.asset.total);
-            }
-        });
-    }
-
     public void doTrade(Map<String, String> paramsMap) {
         Request request = new Request.Builder().post(RequestBody.create(mediaType, parserParamsMap(paramsMap))).url(APIUrl.TRADE_INFO_FORMET).build();
         mOkHttpClient.newCall(request).enqueue(new Callback() {
@@ -126,7 +107,7 @@ public class NetWorkService {
 
 
 
-    private String parserParamsMap(Map<String, String> paramsMap) {
+    public String parserParamsMap(Map<String, String> paramsMap) {
         StringBuffer sb = new StringBuffer("");
         Iterator<Map.Entry<String, String>> it = paramsMap.entrySet().iterator();
         String[] params = new String[paramsMap.size()];
@@ -146,7 +127,7 @@ public class NetWorkService {
         return sb.toString();
     }
 
-    private String getSignString(Map<String, String> paramsMap) {
+    public String getSignString(Map<String, String> paramsMap) {
         StringBuffer sb = new StringBuffer("");
         Iterator<Map.Entry<String, String>> it = paramsMap.entrySet().iterator();
         String[] params = new String[paramsMap.size()];
