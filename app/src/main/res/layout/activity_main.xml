@@ -4,164 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账户信息"
-                android:textSize="15sp"
-                android:gravity="center_horizontal"
-                />
-
-            <Button
-                android:id="@+id/userInfoButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="获取账户信息"
-                android:textSize="15sp"
-                android:layout_marginLeft="10dp"
-                />
-
-            <TextView
-                android:id="@+id/userCountText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="15sp"
-                android:layout_marginLeft="10dp"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CNY:"
-                android:textSize="13sp"
-                />
-
-            <TextView
-                android:id="@+id/cnyValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textSize="13sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LTC:"
-                android:textSize="13sp"
-                />
-
-            <TextView
-                android:id="@+id/ltcValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textSize="13sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BTC:"
-                android:textSize="13sp"
-                />
-
-            <TextView
-                android:id="@+id/btcValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textSize="13sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ETH:"
-                android:textSize="13sp"
-                />
-
-            <TextView
-                android:id="@+id/ethValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textSize="13sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-
-    </LinearLayout>
+    <include
+        layout="@layout/activity_main_user" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/ltcSellButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取比特币交易数据"
+        android:text="获取莱特币交易数据"
         android:textSize="15sp"
         android:layout_marginTop="10dp"
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/ltcInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="获取近600次交易信息"
@@ -170,10 +26,28 @@
         />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/tradeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="下单交易"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/tradeInfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="交易信息（未完成）"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/cancelTradeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="撤销订单"
         android:textSize="15sp"
         android:layout_marginTop="10dp"
         />
