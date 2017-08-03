@@ -5,12 +5,12 @@ package dw.zm.com.btbproject.entry
  */
 
 class Order {
-    var result: Boolean? = false
+    var result: Boolean = false
     var order_id = ""
 }
 
 class OrderCancel {
-    var result: Boolean? = false
+    var result: Boolean = false
     var order_id = ""
     var success = ""
     var error = ""

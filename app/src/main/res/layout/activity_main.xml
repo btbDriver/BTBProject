@@ -4,52 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 用户信息 -->
     <include
         layout="@layout/activity_main_user" />
 
-    <Button
-        android:id="@+id/ltcSellButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="获取莱特币交易数据"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
+    <!-- Trade交易 -->
+    <include
+        layout="@layout/activity_main_trade"
+        android:visibility="gone"
         />
 
-    <Button
-        android:id="@+id/ltcInfoButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="获取近600次交易信息"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        />
+    <!-- title -->
+    <include
+        layout="@layout/activity_main_near" />
 
-    <Button
-        android:id="@+id/tradeButton"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="下单交易"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
         />
-
-    <Button
-        android:id="@+id/tradeInfoButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="交易信息（未完成）"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        />
-
-    <Button
-        android:id="@+id/cancelTradeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="撤销订单"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        />
-
 </LinearLayout>

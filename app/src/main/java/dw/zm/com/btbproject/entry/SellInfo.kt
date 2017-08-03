@@ -6,9 +6,9 @@ package dw.zm.com.btbproject.entry
 
 class SellInfo {
     var amount = "0.0"
-    var date: Long? = 0L
-    var date_ms: Long? = 0L
+    var date: Long = 0L
+    var date_ms: Long = 0L
     var price = "0.0"
-    var tid: Long? = 0L
+    var tid: Long = 0L
     var type = ""
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="5dp">
+
+    <Button
+        android:id="@+id/ltcSellButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="莱特币"
+        android:textSize="15sp"
+        />
+
+    <Button
+        android:id="@+id/ltcInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="近期"
+        android:textSize="15sp"
+        android:layout_marginLeft="2dp"
+        />
+    <Button
+        android:id="@+id/tradeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="下单"
+        android:textSize="15sp"
+        android:layout_marginLeft="2dp"
+        />
+    <Button
+        android:id="@+id/cancelTradeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="撤销"
+        android:textSize="15sp"
+        android:layout_marginLeft="2dp"
+        />
+
+    <Button
+        android:id="@+id/tradeInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="未完成"
+        android:textSize="15sp"
+        android:layout_marginLeft="2dp"
+        />
+
+</LinearLayout>

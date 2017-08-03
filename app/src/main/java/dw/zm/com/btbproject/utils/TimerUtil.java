@@ -15,7 +15,19 @@ public class TimerUtil {
         long mSecondTime = secondTime * 1000;
         Date date = new Date();
         date.setTime(mSecondTime);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        result = sdf.format(date);
+
+        return result;
+    }
+
+    public static final String getDayTime(long secondTime) {
+        String result = "";
+
+        long mSecondTime = secondTime * 1000;
+        Date date = new Date();
+        date.setTime(mSecondTime);
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         result = sdf.format(date);
 
         return result;
