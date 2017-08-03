@@ -85,14 +85,14 @@ public class MainActivity extends BaseActivity {
                                 public void onCallBack(final User user) {
                                     userInfo = user;
                                     userCountText.setText(((Integer.valueOf(userCountText.getText().toString()) + 1)) + "");
-                                    cnyValue.setText(userInfo.info.funds.free.cny);
-                                    ltcValue.setText(userInfo.info.funds.free.ltc);
-                                    btcValue.setText(userInfo.info.funds.free.btc);
-                                    ethValue.setText(userInfo.info.funds.free.eth);
-                                    cny2Value.setText(userInfo.info.funds.freezed.cny);
-                                    ltc2Value.setText(userInfo.info.funds.freezed.ltc);
-                                    btc2Value.setText(userInfo.info.funds.freezed.btc);
-                                    eth2Value.setText(userInfo.info.funds.freezed.eth);
+                                    cnyValue.setText(userInfo.getInfo().getFunds().getFree().getCny());
+                                    ltcValue.setText(userInfo.getInfo().getFunds().getFree().getLtc());
+                                    btcValue.setText(userInfo.getInfo().getFunds().getFree().getBtc());
+                                    ethValue.setText(userInfo.getInfo().getFunds().getFree().getEth());
+                                    cny2Value.setText(userInfo.getInfo().getFunds().getFreezed().getCny());
+                                    ltc2Value.setText(userInfo.getInfo().getFunds().getFreezed().getLtc());
+                                    btc2Value.setText(userInfo.getInfo().getFunds().getFreezed().getBtc());
+                                    eth2Value.setText(userInfo.getInfo().getFunds().getFreezed().getEth());
                                 }
                             });
                         }
@@ -131,9 +131,9 @@ public class MainActivity extends BaseActivity {
                 tradeService.doTrade(paramsMap, new TradeService.TradeCallBack() {
                     @Override
                     public void tradeCallBack(Order order) {
-                        if (order.result) {
+                        if (order.getResult()) {
                             showToast("下单交易成功！");
-                            order_id = order.order_id;
+                            order_id = order.getOrder_id();
                         } else {
                             showToast("下单交易失败！");
                         }
@@ -167,7 +167,7 @@ public class MainActivity extends BaseActivity {
                 tradeService.doCancelTrade(paramsMap, new TradeService.TradeCancelCallBack() {
                     @Override
                     public void tradeCancelCallBack(OrderCancel orderCancel) {
-                        if (orderCancel.result) {
+                        if (orderCancel.getResult()) {
                             showToast("撤销订单成功!");
                         } else {
                             showToast("撤销订单失败!");

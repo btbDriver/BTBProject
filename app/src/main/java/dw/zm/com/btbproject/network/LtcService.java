@@ -57,7 +57,7 @@ public class LtcService extends NetWorkService {
                 List<SellInfo> tempList = new ArrayList<SellInfo>();
                 for (int i = 0; i < resultList.size(); i ++) {
                     if (tempList.size() > 0) {
-                        if (!resultList.get(i).price.equals(tempList.get(tempList.size() - 1).price)) {
+                        if (!resultList.get(i).getPrice().equals(tempList.get(tempList.size() - 1).getPrice())) {
                             tempList.add(resultList.get(i));
                         }
                     } else {
@@ -67,10 +67,10 @@ public class LtcService extends NetWorkService {
 
                 Log.i(TAG, "交易记录个数： " + tempList.size());
                 for (int i = 0; i < tempList.size(); i++) {
-                    Log.i(TAG, "交易时间：" + TimerUtil.getTime(tempList.get(i).date) +
-                            "   交易价格：" + tempList.get(i).price +
-                            "   交易数量：" + tempList.get(i).amount +
-                            "   交易类型：" + tempList.get(i).type);
+                    Log.i(TAG, "交易时间：" + TimerUtil.getTime(tempList.get(i).getDate()) +
+                            "   交易价格：" + tempList.get(i).getPrice() +
+                            "   交易数量：" + tempList.get(i).getAmount() +
+                            "   交易类型：" + tempList.get(i).getType());
                 }
             }
         });
